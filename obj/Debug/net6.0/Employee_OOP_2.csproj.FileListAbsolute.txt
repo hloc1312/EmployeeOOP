@@ -1,0 +1,15 @@
+C:\Users\loc.nguyen\Desktop\OOP\Employee_OOP\Employee_OOP_2\bin\Debug\net6.0\Employee_OOP_2.exe
+C:\Users\loc.nguyen\Desktop\OOP\Employee_OOP\Employee_OOP_2\bin\Debug\net6.0\Employee_OOP_2.deps.json
+C:\Users\loc.nguyen\Desktop\OOP\Employee_OOP\Employee_OOP_2\bin\Debug\net6.0\Employee_OOP_2.runtimeconfig.json
+C:\Users\loc.nguyen\Desktop\OOP\Employee_OOP\Employee_OOP_2\bin\Debug\net6.0\Employee_OOP_2.dll
+C:\Users\loc.nguyen\Desktop\OOP\Employee_OOP\Employee_OOP_2\bin\Debug\net6.0\Employee_OOP_2.pdb
+C:\Users\loc.nguyen\Desktop\OOP\Employee_OOP\Employee_OOP_2\obj\Debug\net6.0\Employee_OOP_2.csproj.AssemblyReference.cache
+C:\Users\loc.nguyen\Desktop\OOP\Employee_OOP\Employee_OOP_2\obj\Debug\net6.0\Employee_OOP_2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\loc.nguyen\Desktop\OOP\Employee_OOP\Employee_OOP_2\obj\Debug\net6.0\Employee_OOP_2.AssemblyInfoInputs.cache
+C:\Users\loc.nguyen\Desktop\OOP\Employee_OOP\Employee_OOP_2\obj\Debug\net6.0\Employee_OOP_2.AssemblyInfo.cs
+C:\Users\loc.nguyen\Desktop\OOP\Employee_OOP\Employee_OOP_2\obj\Debug\net6.0\Employee_OOP_2.csproj.CoreCompileInputs.cache
+C:\Users\loc.nguyen\Desktop\OOP\Employee_OOP\Employee_OOP_2\obj\Debug\net6.0\Employee_OOP_2.dll
+C:\Users\loc.nguyen\Desktop\OOP\Employee_OOP\Employee_OOP_2\obj\Debug\net6.0\refint\Employee_OOP_2.dll
+C:\Users\loc.nguyen\Desktop\OOP\Employee_OOP\Employee_OOP_2\obj\Debug\net6.0\Employee_OOP_2.pdb
+C:\Users\loc.nguyen\Desktop\OOP\Employee_OOP\Employee_OOP_2\obj\Debug\net6.0\Employee_OOP_2.genruntimeconfig.cache
+C:\Users\loc.nguyen\Desktop\OOP\Employee_OOP\Employee_OOP_2\obj\Debug\net6.0\ref\Employee_OOP_2.dll
