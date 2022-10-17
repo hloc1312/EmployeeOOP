@@ -30,3 +30,4 @@ C:\Users\loc.nguyen\Desktop\EmployeeOOP\obj\Debug\net6.0\Employee_OOP_2.genrunti
 C:\Users\loc.nguyen\Desktop\EmployeeOOP\obj\Debug\net6.0\ref\Employee_OOP_2.dll
 C:\Users\loc.nguyen\Desktop\EmployeeOOP\bin\Debug\net6.0\shortid.dll
 C:\Users\loc.nguyen\Desktop\EmployeeOOP\obj\Debug\net6.0\Employee_OOP_2.csproj.CopyComplete
+C:\Users\loc.nguyen\Desktop\EmployeeOOP\bin\Debug\net6.0\ConsoleTables.dll

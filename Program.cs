@@ -8,9 +8,7 @@ class Program
     static void Main(string[] args)
     {
         Company company = new Company();
-
         Action action;
-
         string typeProgram;
         do
         {
@@ -22,6 +20,7 @@ class Program
                "4. Show team not enough 4 position\n" +
                "5. Show list member or team" +
                "\n6. Exit");
+
             Console.Write("\n Input number: ");
             typeProgram = Console.ReadLine();
             action = (Action)Enum.Parse(typeof(Action), typeProgram);
@@ -31,34 +30,36 @@ class Program
                 case Action.ADD_MEMBER:
                     {
                         Console.WriteLine("\n0. Add member\n1.Add team\n2.Add member into team");
-                        string type =Console.ReadLine();
+                        string type = Console.ReadLine();
                         Action_Add_Member actionMember;
                         actionMember = (Action_Add_Member)Enum.Parse(typeof(Action_Add_Member), type);
                         switch (actionMember)
                         {
                             case Action_Add_Member.ADD_MEMBER_1:
                                 {
-                                    int typeMember;
+                                    string typeMember;
                                     Console.WriteLine("\nChoose type member: \n0. Designer\n1. Developer\n2. Manager\n3. Tester");
-                                    typeMember = int.Parse(Console.ReadLine());
-                                    switch (typeMember)
+                                    typeMember = Console.ReadLine();
+                                    Action_Type_Member action_Type_Member;
+                                    action_Type_Member = (Action_Type_Member)Enum.Parse(typeof(Action_Type_Member), typeMember);
+                                    switch (action_Type_Member)
                                     {
-                                        case 0:
+                                        case Action_Type_Member.DESIGNER:
                                             {
                                                 company.CreateDesigner();
                                                 break;
                                             }
-                                        case 1:
+                                        case Action_Type_Member.DEVELOPER:
                                             {
                                                 company.CreateDeveloper();
                                                 break;
                                             }
-                                        case 2:
+                                        case Action_Type_Member.MANAGER:
                                             {
                                                 company.CreateManager();
                                                 break;
                                             }
-                                        case 3:
+                                        case Action_Type_Member.TESTER:
                                             {
                                                 company.CreateTester();
                                                 break;
@@ -91,15 +92,17 @@ class Program
                 case Action.REMOVE_MEMBER:
                     {
                         Console.WriteLine("\n0. Remove member\n1.Remove team");
-                        int type = Int32.Parse(Console.ReadLine());
-                        switch (type)
+                        string type = Console.ReadLine();
+                        Action_Type_Remove action_Type_Remove;
+                        action_Type_Remove = (Action_Type_Remove)Enum.Parse(typeof(Action_Type_Remove), type);
+                        switch (action_Type_Remove)
                         {
-                            case 0:
+                            case Action_Type_Remove.REMOVE_MEMBER:
                                 {
                                     company.RemoveEmployee();
                                     break;
                                 }
-                            case 1:
+                            case Action_Type_Remove.REMOVE_TEAM:
                                 {
                                     company.RemoveTeam();
                                     break;
@@ -138,15 +141,17 @@ class Program
                 case Action.SHOW_LIST_MEMBER_OR_TEAM:
                     {
                         Console.WriteLine("\n0. Show list member\n1. Show list team");
-                        int type = Int32.Parse(Console.ReadLine());
-                        switch (type)
+                        string type = Console.ReadLine();
+                        Action_Type_List action_Type_List;
+                        action_Type_List = (Action_Type_List)Enum.Parse(typeof(Action_Type_List), type);
+                        switch (action_Type_List)
                         {
-                            case 0:
+                            case Action_Type_List.LIST_MEMBER:
                                 {
                                     company.GetListMember();
                                     break;
                                 }
-                            case 1:
+                            case Action_Type_List.LIST_TEAM:
                                 {
                                     company.GetListTeam();
                                     break;
@@ -168,7 +173,8 @@ class Program
         } while (typeProgram != Action.EXIT.ToString());
     }
 }
-enum Action {
+enum Action
+{
     ADD_MEMBER,
     REMOVE_MEMBER,
     SHOW_TOTAL_SALARY,
@@ -183,6 +189,27 @@ enum Action_Add_Member
     ADD_MEMBER_1,
     ADD_TEAM,
     ADD_MEMBER_INTO_TEAM
+}
+
+enum Action_Type_Member
+{
+    DESIGNER,
+    DEVELOPER,
+    MANAGER,
+    TESTER
+}
+
+enum Action_Type_Remove
+{
+    REMOVE_MEMBER,
+    REMOVE_TEAM
+
+}
+
+enum Action_Type_List
+{
+    LIST_MEMBER,
+    LIST_TEAM
 }
 
 

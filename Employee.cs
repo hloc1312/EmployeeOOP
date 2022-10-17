@@ -56,7 +56,7 @@ namespace Employee_OOP_2
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Error is: " + e);
+                    Console.WriteLine("Invalid Name");
                 }
             }
             
@@ -75,7 +75,7 @@ namespace Employee_OOP_2
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Error is: " + e);
+                    Console.WriteLine("Invalid Salary");
                 }
 
             }
@@ -95,7 +95,7 @@ namespace Employee_OOP_2
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Error is: " + e);
+                    Console.WriteLine("Invalid Level Number");
                 }
 
             }
@@ -117,7 +117,7 @@ namespace Employee_OOP_2
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Error is: " + e);
+                    Console.WriteLine("Invalid Onboard Date");
                 }
 
             }
