@@ -9,12 +9,12 @@ namespace Employee_OOP_2
 {
     internal abstract class Employee
     {
-        public int employeeCode;
+        public string employeeCode;
         protected string name;
         protected int baseSalary;
         protected double levelNumber;
         protected DateTime onboardDate;
-        public int teamID;
+        public string teamID;
         public double Salary()
         {
             var workingDay = GetDay();
@@ -35,25 +35,7 @@ namespace Employee_OOP_2
 
         public void Nhap()
         {
-            //while (true)
-            //{
-            //    try
-            //    {
-            //        Console.Write("\nEmployee Code: ");
-            //        employeeCode = int.Parse(Console.ReadLine());
-            //        Regex regex = new Regex(@"^\d+$");
-            //        if (regex.IsMatch(employeeCode.ToString()))
-            //        {
-            //            break;
-            //        }
-
-            //    }
-            //    catch (Exception e)
-            //    {
-            //        Console.WriteLine("Error is: " + e);
-            //    }
-
-            //}
+           
 
             while (true)
             {
@@ -130,10 +112,7 @@ namespace Employee_OOP_2
                     {
                         break;
                     }
-                    else
-                    {
-                        //Console.WriteLine("Format yyyy/mm/dd");
-                    }
+                 
 
                 }
                 catch (Exception e)
@@ -153,7 +132,7 @@ namespace Employee_OOP_2
             
         }
 
-        public int GetID()
+        public string GetID()
         {
             return employeeCode;
         }

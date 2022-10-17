@@ -14,7 +14,7 @@ namespace Employee_OOP_2
             position = "Manager";
         }
 
-        public Manager(int _employeeCode, string _name, int _baseSalary, double _levelNumber, DateTime _onboardDate, int _teamID)
+        public Manager(string _employeeCode, string _name, int _baseSalary, double _levelNumber, DateTime _onboardDate, int _teamID)
         {
             this.employeeCode = _employeeCode;
             this.name = _name;

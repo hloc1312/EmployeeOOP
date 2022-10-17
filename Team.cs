@@ -9,13 +9,13 @@ namespace Employee_OOP_2
 {
     internal class Team
     {
-        public int  teamID{ get; set; }
+        public string  teamID{ get; set; }
         public string name{ get; set; }
         public Team()
         {
             
         }
-        public Team(int _teamID, string _name)
+        public Team(string _teamID, string _name)
         {
             this.teamID = _teamID;
 
@@ -23,25 +23,7 @@ namespace Employee_OOP_2
         }
         public void Nhap()
         {
-            //while (true)
-            //{
-            //    try
-            //    {
-            //        //Console.Write("\nteamID: ");
-            //        //teamID = int.Parse(Console.ReadLine());
-            //        Regex regex = new Regex(@"^\d$");
-            //        if (regex.IsMatch(teamID.ToString()))
-            //        {
-            //            break;
-            //        }
-
-            //    }
-            //    catch(Exception e)
-            //    {
-            //        Console.WriteLine("Error is: " + e);
-            //    }
-
-            //}
+       
             while (true)
             {
                 try
@@ -71,5 +53,10 @@ namespace Employee_OOP_2
         {
             Console.WriteLine($"TeamID: {teamID} - Name: {name}");
         }
+
+      
+      
+
+       
     }
 }

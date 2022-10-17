@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "y/91eS0tHSPVAJZ2qLVFAzuXfE4BitZHW6HXHD4ZiCkJr0IT+N+tKWpyqoGRPrQlv9c1TyUf+l7CFiLvSMFrdw==",
+  "dgSpecHash": "iysnL9sIh52RocLSb7bmjrPIT9BuLYa7E0k2DA/Ez3wfrNMjajx9P3iWQzxDvHVzSe0XUtKcPjgH9aJLBrcnYg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\loc.nguyen\\Desktop\\OOP\\Employee_OOP\\Employee_OOP_2\\Employee_OOP_2.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\loc.nguyen\\Desktop\\EmployeeOOP\\Employee_OOP_2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\loc.nguyen\\.nuget\\packages\\shortid\\4.0.0\\shortid.4.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,4 +1,5 @@
 ﻿using Employee_OOP_2;
+using shortid;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 
@@ -6,12 +7,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        Employee employee;
-        List<Employee> listEmployees = new List<Employee>();
-        Team team;
-        List<Team> listTeam = new List<Team>();
+        Company company = new Company();
 
-        int typeProgram;
+        Action action;
+
+        string typeProgram;
         do
         {
             Console.Write(
@@ -22,18 +22,21 @@ class Program
                "4. Show team not enough 4 position\n" +
                "5. Show list member or team" +
                "\n6. Exit");
-            Console.Write("\n Input type: ");
-            typeProgram = int.Parse(Console.ReadLine());
-            switch (typeProgram)
+            Console.Write("\n Input number: ");
+            typeProgram = Console.ReadLine();
+            action = (Action)Enum.Parse(typeof(Action), typeProgram);
+            switch (action)
             {
                 //Chọn thêm member hoặc team
-                case 0:
+                case Action.ADD_MEMBER:
                     {
                         Console.WriteLine("\n0. Add member\n1.Add team\n2.Add member into team");
-                        int type = Int32.Parse(Console.ReadLine());
-                        switch (type)
+                        string type =Console.ReadLine();
+                        Action_Add_Member actionMember;
+                        actionMember = (Action_Add_Member)Enum.Parse(typeof(Action_Add_Member), type);
+                        switch (actionMember)
                         {
-                            case 0:
+                            case Action_Add_Member.ADD_MEMBER_1:
                                 {
                                     int typeMember;
                                     Console.WriteLine("\nChoose type member: \n0. Designer\n1. Developer\n2. Manager\n3. Tester");
@@ -42,236 +45,39 @@ class Program
                                     {
                                         case 0:
                                             {
-                                                employee = new Designer();
-                                                int _employeeID;
-                                                while (true)
-                                                {
-                                                    try
-                                                    {
-                                                        Console.Write("EmployeeCode: ");
-                                                        _employeeID = int.Parse(Console.ReadLine());
-                                                        Regex regex = new Regex(@"^[0-9]+$");
-                                                        //Console.WriteLine(regex.IsMatch(_teamID.ToString()));
-                                                        if (regex.IsMatch(_employeeID.ToString()))
-                                                        {
-                                                            break;
-                                                        }
-
-                                                    }
-                                                    catch (Exception e)
-                                                    {
-                                                        Console.WriteLine("Error is: " + e);
-                                                    }
-
-                                                }
-
-                                                int index = listEmployees.FindIndex(item => item.employeeCode == _employeeID);
-                                                if (index == -1)
-                                                {
-                                                    employee.employeeCode = _employeeID;
-                                                    employee.Nhap();
-                                                    employee.Xuat();
-                                                    listEmployees.Add(employee);
-                                                }
-                                                else
-                                                {
-                                                    Console.WriteLine("EmployeeID exit");
-                                                }
-
+                                                company.CreateDesigner();
                                                 break;
                                             }
                                         case 1:
                                             {
-                                                employee = new Developer();
-
-                                                int _employeeID;
-                                                while (true)
-                                                {
-                                                    try
-                                                    {
-                                                        Console.Write("EmployeeCode: ");
-                                                        _employeeID = int.Parse(Console.ReadLine());
-                                                        Regex regex = new Regex(@"^[0-9]+$");
-                                                        //Console.WriteLine(regex.IsMatch(_teamID.ToString()));
-                                                        if (regex.IsMatch(_employeeID.ToString()))
-                                                        {
-                                                            break;
-                                                        }
-
-                                                    }
-                                                    catch (Exception e)
-                                                    {
-                                                        Console.WriteLine("Error is: " + e);
-                                                    }
-
-                                                }
-
-                                                int index = listEmployees.FindIndex(item => item.employeeCode == _employeeID);
-                                                if (index == -1)
-                                                {
-                                                    employee.employeeCode = _employeeID;
-                                                    employee.Nhap();
-                                                    employee.Xuat();
-                                                    listEmployees.Add(employee);
-                                                }
-                                                else
-                                                {
-                                                    Console.WriteLine("EmployeeID exit");
-                                                }
+                                                company.CreateDeveloper();
                                                 break;
                                             }
                                         case 2:
                                             {
-                                                employee = new Manager();
-                                                int _employeeID;
-                                                while (true)
-                                                {
-                                                    try
-                                                    {
-                                                        Console.Write("EmployeeCode: ");
-                                                        _employeeID = int.Parse(Console.ReadLine());
-                                                        Regex regex = new Regex(@"^[0-9]+$");
-                                                        //Console.WriteLine(regex.IsMatch(_teamID.ToString()));
-                                                        if (regex.IsMatch(_employeeID.ToString()))
-                                                        {
-                                                            break;
-                                                        }
-
-                                                    }
-                                                    catch (Exception e)
-                                                    {
-                                                        Console.WriteLine("Error is: " + e);
-                                                    }
-
-                                                }
-
-                                                int index = listEmployees.FindIndex(item => item.employeeCode == _employeeID);
-                                                if (index == -1)
-                                                {
-                                                    employee.employeeCode = _employeeID;
-                                                    employee.Nhap();
-                                                    employee.Xuat();
-                                                    listEmployees.Add(employee);
-                                                }
-                                                else
-                                                {
-                                                    Console.WriteLine("EmployeeID exit");
-                                                }
+                                                company.CreateManager();
                                                 break;
                                             }
                                         case 3:
                                             {
-                                                employee = new Tester();
-                                                int _employeeID;
-                                                while (true)
-                                                {
-                                                    try
-                                                    {
-                                                        Console.Write("EmployeeCode: ");
-                                                        _employeeID = int.Parse(Console.ReadLine());
-                                                        Regex regex = new Regex(@"^[0-9]+$");
-                                                        //Console.WriteLine(regex.IsMatch(_teamID.ToString()));
-                                                        if (regex.IsMatch(_employeeID.ToString()))
-                                                        {
-                                                            break;
-                                                        }
-
-                                                    }
-                                                    catch (Exception e)
-                                                    {
-                                                        Console.WriteLine("Error is: " + e);
-                                                    }
-
-                                                }
-
-                                                int index = listEmployees.FindIndex(item => item.employeeCode == _employeeID);
-                                                if (index == -1)
-                                                {
-                                                    employee.employeeCode = _employeeID;
-                                                    employee.Nhap();
-                                                    employee.Xuat();
-                                                    listEmployees.Add(employee);
-                                                }
-                                                else
-                                                {
-                                                    Console.WriteLine("EmployeeID exit");
-                                                }
+                                                company.CreateTester();
                                                 break;
                                             }
                                         default:
                                             Console.WriteLine("Please input again");
                                             break;
-
-
-
-
-
                                     }
                                     break;
                                 }
-                            case 1:
+                            case Action_Add_Member.ADD_TEAM:
                                 {
-                                    team = new Team();
-                                    int _teamID;
-                                    while (true)
-                                    {
-                                        try
-                                        {
-                                            Console.Write("TeamID: ");
-                                            _teamID = int.Parse(Console.ReadLine());
-                                            Regex regex = new Regex(@"^[0-9]+$");
-                                            //Console.WriteLine(regex.IsMatch(_teamID.ToString()));
-                                            if (regex.IsMatch(_teamID.ToString()))
-                                            {
-                                                break;
-                                            }
-
-                                        }
-                                        catch (Exception e)
-                                        {
-                                            Console.WriteLine("Error is: " + e);
-                                        }
-
-                                    }
-
-                                    int index = listTeam.FindIndex(item => item.teamID == _teamID);
-                                    if (index == -1)
-                                    {
-                                        team.teamID = _teamID;
-                                        team.Nhap();
-                                        team.Xuat();
-                                        listTeam.Add(team);
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("TeamID exit");
-                                    }
+                                    company.CreateTeam();
                                     break;
                                 }
 
-                            case 2:
+                            case Action_Add_Member.ADD_MEMBER_INTO_TEAM:
                                 {
-                                    Console.WriteLine("\n\nChon teamID: ");
-                                    int teamID = int.Parse(Console.ReadLine());
-                                    int indexTeam = listTeam.FindIndex(item => item.teamID == teamID);
-                                    Console.WriteLine("\nNhap id nhan vien muon vao team: ");
-                                    int employeeID = int.Parse(Console.ReadLine());
-                                    int indexEmployee = listEmployees.FindIndex(item => item.GetID() == employeeID);
-                                    if (indexTeam != -1)
-                                    {
-                                        if (indexEmployee != -1)
-                                        {
-                                            listEmployees[indexEmployee].teamID = listTeam[indexTeam].teamID;
-                                        }
-                                        else
-                                        {
-                                            Console.WriteLine("Not found employeeID");
-                                        }
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("Not found teamID");
-                                    }
+                                    company.AddMemberToTeam();
                                     break;
                                 }
                             default:
@@ -282,7 +88,7 @@ class Program
                     }
 
                 //Xóa member hoặc team
-                case 1:
+                case Action.REMOVE_MEMBER:
                     {
                         Console.WriteLine("\n0. Remove member\n1.Remove team");
                         int type = Int32.Parse(Console.ReadLine());
@@ -290,26 +96,12 @@ class Program
                         {
                             case 0:
                                 {
-                                    Console.WriteLine("Choose employeeID remove: ");
-                                    int id = int.Parse(Console.ReadLine());
-                                    int indexEmployeeID = listEmployees.FindIndex(item => item.GetID() == id);
-                                    if (indexEmployeeID != -1)
-                                    {
-                                        listEmployees.Remove(listEmployees[indexEmployeeID]);
-
-                                    }
+                                    company.RemoveEmployee();
                                     break;
                                 }
                             case 1:
                                 {
-                                    Console.WriteLine("Choose teamID remove: ");
-                                    int id = int.Parse(Console.ReadLine());
-                                    int indexTeamID = listEmployees.FindIndex(item => item.teamID == id);
-                                    if (indexTeamID != -1)
-                                    {
-                                        listTeam.Remove(listTeam[indexTeamID]);
-
-                                    }
+                                    company.RemoveTeam();
                                     break;
                                 }
                             default:
@@ -322,115 +114,28 @@ class Program
                     }
 
                 //Hiển thị danh sách lương
-                case 2:
+                case Action.SHOW_TOTAL_SALARY:
                     {
-                        double total_salary = 0;
-                        foreach (var e in listEmployees)
-                        {
-                            total_salary += e.Salary();
-                        }
-                        Console.WriteLine($"\n\nTotal Salary: {total_salary.ToString("N0")}");
+                        company.GetSalary();
                         break;
                     }
 
                 //Hiển thị tên manager đông thành viên nhất
-                case 3:
+                case Action.SHOW_MANAGER_MOST_MEMBER:
                     {
-                        //Vòng lặp tìm team có số nhân viên lớn nhất
-                        int teamMax = 0;
-                        int idMax = 0;
-                        string nameMax = "";
-                        for (int i = 0; i < listTeam.Count; i++)
-                        {
-                            int total = 0;
-                            for (int j = 0; j < listEmployees.Count; j++)
-                            {
-                                if (listEmployees[j].teamID == listTeam[i].teamID)
-                                {
-                                    total++;
-                                }
-                            }
-                            if (teamMax < total)
-                            {
-                                teamMax = total;
-                                idMax = listTeam[i].teamID;
-                                nameMax = listTeam[i].name;
-
-                            }
-
-                        }
-                        Console.WriteLine($"Show the manager name with the most members: TeamID: {idMax} - Name: {nameMax}");
-
-                        //Vòng lặp tìm team có cùng số nhân viên lớn nhất
-
-                        int temp = teamMax;
-                        int tempIdMax = 0;
-                        string tempNameMax = "";
-                        for (int i = 0; i < listTeam.Count; i++)
-                        {
-                            int total = 0;
-                            for (int j = 0; j < listEmployees.Count; j++)
-                            {
-                                if (listEmployees[j].teamID == listTeam[i].teamID)
-                                {
-                                    total++;
-                                }
-                            }
-                            if (temp == total && listTeam[i].teamID != idMax)
-                            {
-                                tempIdMax = listTeam[i].teamID;
-                                tempNameMax = listTeam[i].name;
-
-                                Console.WriteLine($"Show the manager name with the most members: TeamID: {tempIdMax} - Name: {tempNameMax}");
-
-                            }
-                        }
+                        company.GetMemberMore();
                         break;
                     }
 
                 //Hiển thị tên manager không đủ 4 vị trí
-                case 4:
+                case Action.SHOW_TEAM_NOT_ENOUGH:
                     {
-                        for (int i = 0; i < listTeam.Count; i++)
-                        {
-                            int totalDesgin = 0;
-                            int totalDevelop = 0;
-                            int totalManager = 0;
-                            int totalTester = 0;
-                            for (int j = 0; j < listEmployees.Count; j++)
-                            {
-
-                                if (listTeam[i].teamID == listEmployees[j].teamID)
-                                {
-                                    if (listEmployees[j].position == "Designer")
-                                    {
-                                        totalDesgin++;
-                                    }
-                                    if (listEmployees[j].position == "Developer")
-                                    {
-                                        totalDevelop++;
-                                    }
-                                    if (listEmployees[j].position == "Manager")
-                                    {
-                                        totalManager++;
-                                    }
-                                    if (listEmployees[j].position == "Tester")
-                                    {
-                                        totalTester++;
-                                    }
-
-                                }
-                            }
-                            if (totalDesgin == 0 || totalDevelop == 0 || totalManager == 0 || totalTester == 0)
-                            {
-                                Console.WriteLine($"Show team not enough 4 position: TeamID: {listTeam[i].teamID} Name: {listTeam[i].name}");
-                            }
-                        }
+                        company.GetManagerEnoughPosition();
                         break;
                     }
 
                 //Hiển thị danh sách member hoặc team
-                case 5:
+                case Action.SHOW_LIST_MEMBER_OR_TEAM:
                     {
                         Console.WriteLine("\n0. Show list member\n1. Show list team");
                         int type = Int32.Parse(Console.ReadLine());
@@ -438,20 +143,12 @@ class Program
                         {
                             case 0:
                                 {
-                                    Console.WriteLine("\nList member");
-                                    foreach (var member in listEmployees)
-                                    {
-                                        member.Xuat();
-                                    }
+                                    company.GetListMember();
                                     break;
                                 }
                             case 1:
                                 {
-                                    Console.WriteLine("\nList team");
-                                    foreach (var teamMember in listTeam)
-                                    {
-                                        teamMember.Xuat();
-                                    }
+                                    company.GetListTeam();
                                     break;
                                 }
                             default:
@@ -459,9 +156,8 @@ class Program
                                 break;
                         }
                         break;
-                        break;
                     }
-                case 6:
+                case Action.EXIT:
                     {
                         break;
                     }
@@ -469,11 +165,26 @@ class Program
                     Console.WriteLine("Please input again");
                     break;
             }
-
-
-        } while (typeProgram != 6);
+        } while (typeProgram != Action.EXIT.ToString());
     }
 }
+enum Action {
+    ADD_MEMBER,
+    REMOVE_MEMBER,
+    SHOW_TOTAL_SALARY,
+    SHOW_MANAGER_MOST_MEMBER,
+    SHOW_TEAM_NOT_ENOUGH,
+    SHOW_LIST_MEMBER_OR_TEAM,
+    EXIT
+}
+
+enum Action_Add_Member
+{
+    ADD_MEMBER_1,
+    ADD_TEAM,
+    ADD_MEMBER_INTO_TEAM
+}
+
 
 
 

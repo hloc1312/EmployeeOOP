@@ -12,7 +12,7 @@ namespace Employee_OOP_2
         {
             position = "Tester";
         }
-        public Tester(int _employeeCode, string _name, int _baseSalary, double _levelNumber, DateTime _onboardDate, int _teamID)
+        public Tester(string _employeeCode, string _name, int _baseSalary, double _levelNumber, DateTime _onboardDate, string _teamID)
         {
             this.employeeCode = _employeeCode;
             this.name = _name;
